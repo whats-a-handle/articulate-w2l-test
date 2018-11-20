@@ -1,0 +1,21 @@
+{
+  "name": "webform-sf-testing",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node server.js",
+    "heroku-postbuild": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build",
+    "client": "cd client && yarn start",
+    "server": "nodemon server.js",
+    "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\""
+  },
+  "dependencies": {
+    "@material-ui/core": "^3.5.1",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "morgan": "^1.9.0",
+    "request": "^2.88.0"
+  },
+  "devDependencies": {
+    "concurrently": "^3.6.0"
+  }
+}
